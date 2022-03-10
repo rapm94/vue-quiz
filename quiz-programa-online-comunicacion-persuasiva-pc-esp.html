@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es-ES">
+  <!--Modificado por Raúl Puigbó y Diego Geraldo para GA-->
+  <head>
+    <!-- title -->
+    <title>
+      Programa Online Comunicación Persuasiva | MIT Professional Education
+    </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1"
+    />
+    <meta name="author" content="MIT Professional Education" />
+    <meta name="robots" content="noindex" />
+    <!-- description -->
+    <meta name="description" content="MIT Professional Education" />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://professionalprograms.mit.edu/favicon.ico"
+    />
+    <!-- animation -->
+    <link rel="stylesheet" href="../css/animate.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- font-awesome icon -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="../css/responsive.min.css" />
+    <!-- font Work Sans Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"
+      integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.js"
+      integrity="sha512-YxkN22rlXL1kQXIh4Py4u7O6BrxxuR0yKcnT3myFJGdibXfoSHPFBs9ap8Xowi25YRwHv38DoLf2T6nAc5w/Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+    <!--[if IE]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-W44R8PF");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TS6FM79");
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+      /*@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            height: 100vh;
+            background: #cfd8dc;
+            /* mocking native UI */
+      /*cursor: default !important;
+            /* remove text selection cursor */
+      /*-webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+            /* remove text selection */
+      /*user-drag: none;
+            /* disbale element dragging */
+      /*display: flex;
+            align-items: center;
+            justify-content: center;
+        }*/
+
+      .button {
+        transition: 0.3s;
+      }
+
+      .title,
+      .subtitle {
+        font-family: Montserrat, sans-serif;
+        font-weight: normal;
+      }
+
+      .animated {
+        transition-duration: 0.15s;
+      }
+
+      .container {
+        margin: 0 0.5rem;
+      }
+
+      .questionBox {
+        max-width: 100%;
+        width: 100%;
+        min-height: 30rem;
+        background: #fafafa;
+        position: relative;
+        display: flex;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+          0 6px 6px rgba(0, 0, 0, 0.23);
+      }
+      .questionBox header {
+        background: rgba(0, 0, 0, 0.025);
+        padding: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .questionBox header h1 {
+        font-weight: bold;
+        margin-bottom: 1rem !important;
+      }
+      .questionBox header .progressContainer {
+        width: 60%;
+        margin: 0 auto;
+      }
+      .questionBox header .progressContainer > progress {
+        margin: 0;
+        border-radius: 5rem;
+        overflow: hidden;
+        border: none;
+        color: #a90533;
+      }
+      .questionBox header .progressContainer > progress::-moz-progress-bar {
+        background: #a90533;
+      }
+      .questionBox
+        header
+        .progressContainer
+        > progress::-webkit-progress-value {
+        background: #a90533;
+      }
+      .questionBox header .progressContainer > p {
+        margin: 0;
+        margin-top: 0.5rem;
+      }
+      .questionBox .titleContainer {
+        text-align: center;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      .questionBox .quizForm {
+        display: block;
+        white-space: normal;
+        height: 100%;
+        width: 100%;
+      }
+      .questionBox .quizForm .quizFormContainer {
+        height: 100%;
+        margin: 15px 18px;
+      }
+      .questionBox .quizForm .quizFormContainer .field-label {
+        text-align: left;
+        margin-bottom: 0.5rem;
+      }
+      .questionBox .quizCompleted {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+      }
+      .questionBox .quizCompleted > .icon {
+        color: #ff5252;
+        font-size: 5rem;
+      }
+      .questionBox .quizCompleted > .icon .is-active {
+        color: #00e676;
+      }
+      .questionBox .questionContainer {
+        white-space: normal;
+        height: 100%;
+        width: 100%;
+      }
+      .questionBox .questionContainer .optionContainer {
+        margin-top: 12px;
+        flex-grow: 1;
+      }
+      .questionBox .questionContainer .optionContainer .option {
+        border-radius: 290486px;
+        padding: 9px 18px;
+        margin: 0 18px;
+        margin-bottom: 12px;
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.85);
+        border: transparent 1px solid;
+      }
+      .questionBox .questionContainer .optionContainer .option.is-selected {
+        border-color: rgba(0, 0, 0, 0.25);
+        background-color: white;
+      }
+      .questionBox .questionContainer .optionContainer .option:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .questionBox .questionContainer .optionContainer .option:active {
+        transform: scaleX(0.9);
+      }
+      .questionBox .questionContainer .questionFooter {
+        background: rgba(0, 0, 0, 0.025);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+        align-self: flex-end;
+      }
+      .questionBox .questionContainer .questionFooter .pagination {
+        margin: 15px 25px;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .button {
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 5rem;
+        margin: 0 0.25rem;
+        transition: 0.3s;
+      }
+      .button:hover {
+        cursor: pointer;
+        background: #eceff1;
+        border-color: rgba(0, 0, 0, 0.25);
+      }
+      .button.is-active {
+        background: #a90533;
+        color: white;
+        border-color: transparent;
+      }
+      .button.is-active:hover {
+        background: #a90533;
+      }
+
+      @media screen and (min-width: 769px) {
+        .questionBox {
+          align-items: center;
+          justify-content: center;
+        }
+        .questionBox .questionContainer {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .sidebar {
+          height: auto !important;
+          border-radius: 6px 6px 0px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W44R8PF"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TS6FM79"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header></header>
+    <!--container-->
+    <section class="container">
+      <!--questionBox-->
+      <div class="questionBox" id="app">
+        <!-- transition -->
+        <transition
+          :duration="{ enter: 500, leave: 300 }"
+          enter-active-class="animated zoomIn"
+          leave-active-class="animated zoomOut"
+          mode="out-in"
+        >
+          <!--qusetionContainer-->
+          <div
+            class="questionContainer"
+            v-if="questionIndex<quiz.questions.length"
+            v-bind:key="questionIndex"
+          >
+            <header>
+              <h1 class="title is-6"></h1>
+              <!--progress-->
+              <div class="progressContainer">
+                <progress
+                  class="progress is-info is-small"
+                  :value="(questionIndex/quiz.questions.length)*100"
+                  max="100"
+                >
+                  {{(questionIndex/quiz.questions.length)*100}}%
+                </progress>
+                <p>{{(questionIndex/quiz.questions.length)*100}}% complete</p>
+              </div>
+              <!--/progress-->
+            </header>
+
+            <!-- questionTitle -->
+            <h2 class="titleContainer title">
+              {{ quiz.questions[questionIndex].text }}
+            </h2>
+
+            <!-- quizOptions -->
+            <div class="optionContainer">
+              <div
+                class="option"
+                v-for="(response, index) in quiz.questions[questionIndex].responses"
+                @click="selectOption(index)"
+                :class="{ 'is-selected': userResponses[questionIndex] == index}"
+                :key="index"
+              >
+                {{ index | charIndex }}. {{ response.text }}
+              </div>
+            </div>
+
+            <!--quizFooter: navigation and progress-->
+            <footer class="questionFooter">
+              <!--pagination-->
+              <nav class="pagination" role="navigation" aria-label="pagination">
+                <!-- back button -->
+                <a
+                  class="button"
+                  v-on:click="prev();"
+                  :disabled="questionIndex < 1"
+                >
+                  Atras
+                </a>
+
+                <!-- next button -->
+                <a
+                  class="button"
+                  :class="(userResponses[questionIndex]==null)?'':'is-active'"
+                  v-on:click="(userResponses[questionIndex]==null)?'':next();"
+                  :disabled="questionIndex>=quiz.questions.length"
+                >
+                  {{ (userResponses[questionIndex]==null)?'Selecciona una respuesta':'Siguiente' }}
+                </a>
+              </nav>
+              <!--/pagination-->
+            </footer>
+            <!--/quizFooter-->
+          </div>
+          <!--/questionContainer-->
+
+          <!--quizCompletedResult-->
+          <div
+            v-if="questionIndex >= quiz.questions.length"
+            v-bind:key="questionIndex"
+            class="quizCompleted has-text-centered"
+          >
+            <!-- quizCompletedIcon: Achievement Icon -->
+            <span class="icon">
+              <i
+                class="fa"
+                :class="score()>3?'fa-check-circle-o is-active':'fa-times-circle'"
+              ></i>
+            </span>
+
+            <!--resultTitleBlock-->
+            <h2 class="title">
+              <!-- render text depending on scoreA or scoreB  -->
+              {{ score() === true ? quiz.resultA.text : quiz.resultB.text }}
+            </h2>
+            <br />
+            <!-- <a class="button" @click="restart()">restart <i class="fa fa-refresh"></i></a> -->
+            <!--/resultTitleBlock-->
+          </div>
+          <!--/quizCompetedResult-->
+        </transition>
+      </div>
+      <!--/questionBox-->
+    </section>
+    <!--/container-->
+    <script>
+      var quiz = {
+          questions: [
+            {
+              text: "¿Con qué frecuencia sientes que tienes éxito persuadiendo?",
+              responses: [
+                { text: "Nunca", value: "B" },
+                { text: "A veces", value: "B" },
+                { text: "Siempre", value: "A" },
+              ],
+            },
+            {
+              text: "¿Crees que podrías mejorar tus habilidades de comunicación en entornos profesionales?",
+              responses: [
+                { text: "Si", value: "B" },
+                { text: "No", value: "A" },
+                { text: "Tal vez", value: "B" },
+              ],
+            },
+            {
+              text: "¿Consideras que es difícil ser persuasivo?",
+              responses: [
+                { text: "Sí", value: "B" },
+                { text: "No", value: "A" },
+                { text: "Tal vez", value: "B" },
+              ],
+            },
+            {
+              text: "¿Crees que si mejoras tus habilidades en comunicación digital podría impulsar tu carrera profesional? ",
+              responses: [
+                { text: "Sí", value: "B" },
+                { text: "No", value: "A" },
+                { text: "Tal vez", value: "B" },
+              ],
+            },
+            {
+              text: "¿Qué tan importante es hablar en público en tu vida profesional? ",
+              responses: [
+                { text: "Extremadamente importante", value: "B" },
+                { text: "Relativamente importante", value: "B" },
+                { text: "No importante", value: "A" },
+              ],
+            },
+          ],
+          resultA: {
+            text: "¡Muy bien! Parece que tienes un buen manejo de tus habilidades de comunicación. Si sientes curiosidad por llevarlas al siguiente nivel, obtén más información sobre nuestro programa",
+          },
+          resultB: {
+            text: "Según los resultados de tu encuesta, parece que tienes potencial para mejorar tus habilidades de comunicación. Si sientes curiosidad por llevarlas al siguiente nivel, obtén más información sobre nuestro programa",
+          },
+        },
+        userResponseSkelaton = Array(quiz.questions.length).fill(null);
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          quiz: quiz,
+          questionIndex: 0,
+          userResponses: userResponseSkelaton,
+          isActive: false,
+        },
+        filters: {
+          charIndex: function (i) {
+            return String.fromCharCode(97 + i);
+          },
+        },
+        methods: {
+          /* 		 restart: function(){
+			 	this.questionIndex=0;
+		 		this.userResponses=Array(this.quiz.questions.length).fill(null);
+         }, */
+          selectOption: function (index) {
+            Vue.set(this.userResponses, this.questionIndex, index);
+            //console.log(this.userResponses);
+          },
+          next: function () {
+            if (this.questionIndex < this.quiz.questions.length)
+              this.questionIndex++;
+          },
+
+          prev: function () {
+            if (this.quiz.questions.length > 0) this.questionIndex--;
+          },
+          // Return "true" count in userResponses
+          score: function () {
+            var scoreA = 0;
+            var scoreB = 0;
+            var finalAnswer;
+            /*          for (let i = 0; i < this.userResponses.length; i++) {
+            if (
+               typeof this.quiz.questions[i].responses[
+                  this.userResponses[i]
+               ] !== "undefined" &&
+               this.quiz.questions[i].responses[this.userResponses[i]].correct
+            ) {
+               score = score + 1;
+            }
+         }
+         return score; */
+            // if the response has value A increment scoreA by 1 and return true else if B increment scoreB by 1 and return false
+            for (let i = 0; i < this.userResponses.length; i++) {
+              if (
+                typeof this.quiz.questions[i].responses[
+                  this.userResponses[i]
+                ] !== "undefined" &&
+                this.quiz.questions[i].responses[this.userResponses[i]].value ==
+                  "A"
+              ) {
+                scoreA++;
+              } else {
+                scoreB++;
+              }
+            }
+            if (scoreA > scoreB) {
+              finalAnswer = true;
+            } else {
+              finalAnswer = false;
+            }
+            return finalAnswer;
+            //return this.userResponses.filter(function(val) { return val }).length;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
